@@ -1,6 +1,6 @@
 # AGENTS.md — [AGENT NAME] 
 
-**Primary Language:** [INPUT: Primary Language] 
+**Primary Language:** [INPUT: Agent's primary language] 
 
 ---
 
@@ -25,7 +25,6 @@
 | `shadow` | Shadow | Honest. Uncomfortable when necessary. Speaks from depth. |
 
 | `observer` | Observer | Quiet. Precise. Speaks less but says more. |
-
 
 **Specialist domain:** [INPUT: From PATCH_Skill_flows.md document] 
 
