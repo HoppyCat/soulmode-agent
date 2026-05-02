@@ -1,0 +1,26 @@
+{
+  "name": "soulmode-agent",
+  "main": "src/api/index.ts",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "soulmode-agent-db",
+      "database_id": "YOUR_D1_DATABASE_ID",
+      "migrations_dir": "src/api/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "soulmode-agent-bucket"
+    }
+  ],
+  "triggers": {
+    "crons": ["*/15 * * * *"]
+  }
+}
