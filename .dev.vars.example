@@ -1,0 +1,8 @@
+ANTHROPIC_API_KEY=sk-ant-...
+ADMIN_TOKEN=replace-with-a-long-random-admin-token
+CHAT_API_TOKEN=replace-with-a-long-random-chat-token
+TELEGRAM_BOT_TOKEN=123456789:replace-me
+TELEGRAM_WEBHOOK_SECRET=replace-with-a-random-string
+AGENT_MODEL=claude-sonnet-4-5-20250929
+PUBLIC_AGENT_NAME=Galaxie
+ALLOWED_FETCH_HOSTS=raw.githubusercontent.com,gist.githubusercontent.com

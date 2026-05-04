@@ -1,0 +1,31 @@
+{
+  "name": "soulmode-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A light, D1-backed Soulmode agent that calls Claude Sonnet from Cloudflare Workers.",
+  "author": "Hoppy Cat",
+  "contributors": [
+    "Runable AI starter packet",
+    "ChatGPT for the extended-library retrieval thought",
+    "OpenAI Codex for the Cloudflare/Hono starter implementation"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:migrate:local": "wrangler d1 migrations apply soulmode-agent-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply soulmode-agent-db --remote",
+    "seed:local": "node scripts/seed-soul-files.mjs --local",
+    "seed:remote": "node scripts/seed-soul-files.mjs --remote"
+  },
+  "dependencies": {
+    "hono": "^4.6.16"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.101.0"
+  }
+}
+

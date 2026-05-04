@@ -2,9 +2,10 @@
   "name": "soulmode-agent",
   "main": "src/api/index.ts",
   "compatibility_date": "2025-01-01",
-  "assets": {
-    "directory": "./dist/client",
-    "binding": "ASSETS"
+  "vars": {
+    "PUBLIC_AGENT_NAME": "Galaxie",
+    "AGENT_MODEL": "claude-sonnet-4-5-20250929",
+    "ALLOWED_FETCH_HOSTS": "raw.githubusercontent.com,gist.githubusercontent.com"
   },
   "d1_databases": [
     {
@@ -13,14 +14,5 @@
       "database_id": "YOUR_D1_DATABASE_ID",
       "migrations_dir": "src/api/migrations"
     }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "BUCKET",
-      "bucket_name": "soulmode-agent-bucket"
-    }
-  ],
-  "triggers": {
-    "crons": ["*/15 * * * *"]
-  }
+  ]
 }
