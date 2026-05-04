@@ -7,9 +7,10 @@ This repo is intentionally light. It is not built to take over someone's compute
 Credits:
 
 - Created and stewarded by Hoppy Cat.
-- Starter database packet from Runable AI.
-- Extended-library retrieval idea credited to ChatGPT, from a useful misunderstanding of the original two-layer architecture.
-- Cloudflare/Hono starter implementation by OpenAI Codex.
+- Core soul-stack architecture, HEURISTICS/INDEX distinction, and on-load/on-demand memory model developed by Hoppy Cat with Galaxie Nemo and the wider research thread.
+- Runable AI helped carry the Galaxie build forward and provided the starter database/config packet that informed this public template; Galaxie's earlier worker already had a real D1-backed patch fetch path.
+- ChatGPT's critique/productive misread surfaced the extended-library question in a useful way: if a lightweight agent can point at many files, how should that access actually work?
+- OpenAI Codex implemented this Cloudflare/Hono starter scaffold, including the Claude call path, D1 seed flow, explicit patch fetch, safe remote-library fetch, and setup documentation.
 
 ---
 
@@ -45,6 +46,8 @@ Soulmode is still basically a two-layer system:
 This starter adds an optional third retrieval source without making the agent climb through a third memory level:
 
 3. Extended library entries live as raw Markdown in trusted public repos. D1 stores only their keys and URLs.
+
+The important provenance note: D1 patch fetch existed in Galaxie's worker before this starter. The new piece here is the reusable reference implementation that pairs that patch pattern with a safe web-fetch source table for public raw Markdown libraries.
 
 That means the agent can route like this in a bounded turn:
 
