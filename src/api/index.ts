@@ -46,7 +46,8 @@ app.get("/", (c) => {
 
 app.post("/api/chat", async (c) => {
   if (!hasBearer(c, c.env.CHAT_API_TOKEN)) return c.json({ error: "Unauthorized." }, 401);
-  const body = await c.req.json<{ message?: string; userId?: string; username?: string }>().catch(() => ({}));
+  const body = await c.req.json<{ message?: string; userId?: string; username?: string }>()
+    .catch((): { message?: string; userId?: string; username?: string } => ({}));
   const message = body.message?.trim();
   if (!message) return c.json({ error: "Missing message." }, 400);
 
@@ -104,7 +105,7 @@ app.get("/api/library/fetch/:key", async (c) => {
 
 app.post("/api/library", async (c) => {
   if (!hasBearer(c, c.env.ADMIN_TOKEN)) return c.json({ error: "Unauthorized." }, 401);
-  const body = await c.req.json<Partial<LibrarySource>>().catch(() => ({}));
+  const body = await c.req.json<Partial<LibrarySource>>().catch((): Partial<LibrarySource> => ({}));
   if (!body.key || !body.title || !body.url) {
     return c.json({ error: "key, title, and url are required." }, 400);
   }
@@ -326,8 +327,8 @@ async function persistTurn(db: D1Database, userId: string, username: string, mes
   const history = await loadConversation(db, userId);
   const nextHistory: ConversationMessage[] = [
     ...history,
-    { role: "user", content: message, createdAt: now },
-    { role: "assistant", content: response, createdAt: now },
+    { role: "user" as const, content: message, createdAt: now },
+    { role: "assistant" as const, content: response, createdAt: now },
   ].slice(-MAX_HISTORY_MESSAGES);
 
   await db.batch([
