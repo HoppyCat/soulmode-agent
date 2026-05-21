@@ -1,15 +1,14 @@
-name: Deploy Worker
+name: Check Worker
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  typecheck:
     runs-on: ubuntu-latest
-    env:
-      HAS_CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,11 +16,3 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run typecheck
-      - name: Deploy Worker
-        if: env.HAS_CLOUDFLARE_API_TOKEN == 'true'
-        run: npm run deploy
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - name: Skip deploy when Cloudflare token is missing
-        if: env.HAS_CLOUDFLARE_API_TOKEN != 'true'
-        run: echo "::notice::Skipping Cloudflare deploy because CLOUDFLARE_API_TOKEN is not configured in repository secrets."
