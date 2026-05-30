@@ -175,7 +175,7 @@ Keep private memories and participant-sensitive data in D1 or private storage, n
 
 ## Model
 
-The default model is `claude-sonnet-4-5-20250929`, because Anthropic's current docs describe Claude Sonnet 4.5 as the balanced Sonnet choice for agentic and coding tasks. You can change it with `AGENT_MODEL` in `wrangler.json` or `.dev.vars`.
+The default model is `claude-sonnet-4-6`, Anthropic's current recommended Sonnet for agentic and coding tasks. You can change it with `AGENT_MODEL` in `wrangler.json` or `.dev.vars`.
 
 ---
 

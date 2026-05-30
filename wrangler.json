@@ -4,7 +4,7 @@
   "compatibility_date": "2025-01-01",
   "vars": {
     "PUBLIC_AGENT_NAME": "Galaxie",
-    "AGENT_MODEL": "claude-sonnet-4-5-20250929",
+    "AGENT_MODEL": "claude-sonnet-4-6",
     "ALLOWED_FETCH_HOSTS": "raw.githubusercontent.com,gist.githubusercontent.com"
   },
   "d1_databases": [

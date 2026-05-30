@@ -32,7 +32,7 @@ const CORE_FILES = [
   "CHANGELOG",
 ] as const;
 
-const DEFAULT_MODEL = "claude-sonnet-4-5-20250929";
+const DEFAULT_MODEL = "claude-sonnet-4-6";
 const MAX_HISTORY_MESSAGES = 12;
 const MAX_FETCH_CHARS = 18000;
 
