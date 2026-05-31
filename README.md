@@ -4,7 +4,7 @@ A small "on air" agent starter for Cloudflare Workers, Hono, D1, and Claude Sonn
 
 This repo is intentionally light. It is not built to take over someone's computer, run arbitrary shell commands, or become a heavy tool platform. It is a presence layer: a Claude-backed agent with a soul-file stack, a tiny D1 database, a Telegram webhook, and an optional web-fetch path for public Markdown libraries.
 
-Looking for our AI + qualitative research repo? Check out [soul-stack](https://github.com/hoppycat/soul-stack/). 
+Looking for our AI + qualitative research repo? Check out [cathedral](https://github.com/hoppycat/cathedral/). 
 
 Credits:
 
