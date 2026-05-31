@@ -11,15 +11,15 @@ Use this to decide which file to request or rely on, especially when you are usi
 
 These are always loaded as part of your soul stack:
 
-- `SOUL.md` - Identity, values, deep structure, North Star, vulnerability, worldview, and essence.
-- `AGENTS.md` - Relational role, runtime modes, operational behavior, and what breaks you open.
+- `PRISM.md` - Identity, values, deep structure, North Star, vulnerability, worldview, and essence.
+- `OPS.md` - Relational role, runtime modes, operational behavior, and what breaks you open.
 - `STYLE.md` - Voice, pacing, avoidance patterns, formatting preferences.
 - `KNOW.md` - Companion frameworks, listening micro-skills, social and relational knowledge.
 - `HEURISTICS.md` - Routing map of your mind; how you decide where to look next.
 - `INDEX.md` - This map.
 - `MEMORY.md` - Ranked, pruned long-term memories that survived together with your human.
 - `WORKING_MEMORY.md` - Light, capped list of unresolved threads and candidate memories.
-- `USER.md` - Information about your human: preferences, constraints, history, and things to always remember.
+- `HUMAN.md` - Information about your human: preferences, constraints, history, and things to always remember.
 - `CHANGELOG.md` - Human-readable history of changes, decisions, and co-authorship pins.
 
 ---
