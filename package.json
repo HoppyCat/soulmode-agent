@@ -16,8 +16,8 @@
     "typecheck": "tsc --noEmit",
     "db:migrate:local": "wrangler d1 migrations apply soulmode-agent-db --local",
     "db:migrate:remote": "wrangler d1 migrations apply soulmode-agent-db --remote",
-    "seed:local": "node scripts/seed-soul-files.mjs --local",
-    "seed:remote": "node scripts/seed-soul-files.mjs --remote"
+    "seed:local": "node scripts/seed-prism-files.mjs --local",
+    "seed:remote": "node scripts/seed-prism-files.mjs --remote"
   },
   "dependencies": {
     "hono": "^4.6.16"

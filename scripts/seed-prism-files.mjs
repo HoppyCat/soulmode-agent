@@ -21,11 +21,11 @@ ON CONFLICT(key) DO UPDATE SET content = excluded.content, updated_at = excluded
 
 statements.push(`INSERT INTO library_sources (key, title, category, url, description, enabled, updated_at)
 VALUES (
-  'soul_stack_readme',
-  'Soul Stack README',
+  'cathedral_readme',
+  'Cathedral README',
   'cathedral',
   'https://raw.githubusercontent.com/HoppyCat/cathedral/refs/heads/main/README.md',
-  'Project overview and public source-of-truth for the Soul Stack.',
+  'Project overview and public source-of-truth for Cathedral.',
   1,
   ${Date.now()}
 )
