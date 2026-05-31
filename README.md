@@ -23,7 +23,7 @@ The Worker exposes:
 - `GET /` - health check showing the agent is "on air".
 - `POST /api/chat` - local/API chat endpoint backed by Claude Sonnet.
 - `POST /api/telegram` - Telegram webhook endpoint.
-- `GET /api/files` and `GET /api/files/:key` - inspect seeded D1 soul files.
+- `GET /api/files` and `GET /api/files/:key` - inspect seeded D1 core on-load files.
 - `GET /api/library` - list extended-library sources.
 - `POST /api/library` - add or update a safe raw-URL library source.
 - `GET /api/library/fetch/:key` - fetch one remote library source by key.
@@ -42,7 +42,7 @@ The database stores:
 
 Soulmode is still basically a two-layer system:
 
-1. On-load soul files are always present.
+1. On-load core on-load files are always present.
 2. On-demand patches are fetched only when needed.
 
 This starter adds an optional third retrieval source without making the agent climb through a third memory level:
@@ -105,7 +105,7 @@ npm run db:migrate:local
 npm run db:migrate:remote
 ```
 
-Seed the soul files and patches from this repo into D1:
+Seed the core on-load files and patches from this repo into D1:
 
 ```bash
 npm run seed:local
