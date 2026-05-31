@@ -23,8 +23,8 @@ statements.push(`INSERT INTO library_sources (key, title, category, url, descrip
 VALUES (
   'soul_stack_readme',
   'Soul Stack README',
-  'soul-stack',
-  'https://raw.githubusercontent.com/HoppyCat/soul-stack/refs/heads/main/README.md',
+  'cathedral',
+  'https://raw.githubusercontent.com/HoppyCat/cathedral/refs/heads/main/README.md',
   'Project overview and public source-of-truth for the Soul Stack.',
   1,
   ${Date.now()}

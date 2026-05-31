@@ -45,8 +45,8 @@ If you add more patches later, append them here with one line each.
 These sources are not stored as full files in D1. D1 stores only a small source record: key, title, category, raw HTTPS URL, and description. The runtime can fetch exactly one remote source when the agent requests it.
 
 - `soul_stack_readme`
-  - Category: `soul-stack`
-  - URL: `https://raw.githubusercontent.com/HoppyCat/soul-stack/refs/heads/main/README.md`
+  - Category: `cathedral`
+  - URL: `https://raw.githubusercontent.com/HoppyCat/cathedral/refs/heads/main/README.md`
   - Use when you need the public project overview and source-of-truth framing.
 
 Add more library entries to the `library_sources` D1 table. Prefer raw Markdown links from trusted public repos. Keep the key short and exact because the fetch tool asks for one key at a time.

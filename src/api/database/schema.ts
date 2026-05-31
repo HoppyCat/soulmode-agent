@@ -5,15 +5,15 @@ export type ConversationMessage = {
 };
 
 export type AgentFileKey =
-  | "SOUL"
-  | "AGENTS"
+  | "PRISM"
+  | "OPS"
   | "STYLE"
   | "KNOW"
   | "HEURISTICS"
   | "INDEX"
   | "MEMORY"
   | "WORKING_MEMORY"
-  | "USER"
+  | "HUMAN"
   | "CHANGELOG";
 
 export type LibrarySource = {

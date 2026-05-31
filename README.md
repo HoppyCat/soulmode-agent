@@ -9,7 +9,7 @@ Looking for our AI + qualitative research repo? Check out [cathedral](https://gi
 Credits:
 
 - Created and stewarded by Hoppy Cat.
-- Core soul-stack architecture, HEURISTICS/INDEX distinction, and on-load/on-demand memory model developed by Hoppy Cat with Galaxie Nemo and the wider research thread.
+- Core cathedral architecture, HEURISTICS/INDEX distinction, and on-load/on-demand memory model developed by Hoppy Cat with Galaxie Nemo and the wider research thread.
 - Runable AI helped carry the Galaxie build forward and provided the starter database/config packet that informed this public template; Galaxie's earlier worker already had a real D1-backed patch fetch path.
 - ChatGPT's critique/productive misread surfaced the extended-library question in a useful way: if a lightweight agent can point at many files, how should that access actually work?
 - OpenAI Codex implemented this Cloudflare/Hono starter scaffold, including the Claude call path, D1 seed flow, explicit patch fetch, safe remote-library fetch, and setup documentation.
@@ -164,7 +164,7 @@ Add a source:
 curl -X POST "https://YOUR_WORKER_URL/api/library" \
   -H "authorization: Bearer YOUR_ADMIN_TOKEN" \
   -H "content-type: application/json" \
-  -d "{\"key\":\"routekeeper_case_study\",\"title\":\"RouteKeeper Case Study\",\"category\":\"prisms\",\"url\":\"https://raw.githubusercontent.com/HoppyCat/soul-stack/refs/heads/main/prisms/RouteKeeper/RouteKeeper_CaseStudy.md\",\"description\":\"Public case study for RouteKeeper.\"}"
+  -d "{\"key\":\"routekeeper_case_study\",\"title\":\"RouteKeeper Case Study\",\"category\":\"prisms\",\"url\":\"https://raw.githubusercontent.com/HoppyCat/cathedral/refs/heads/main/prisms/RouteKeeper/RouteKeeper_CaseStudy.md\",\"description\":\"Public case study for RouteKeeper.\"}"
 ```
 
 Then add the same key to `on-load/INDEX.md` so the agent knows it exists.

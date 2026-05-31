@@ -20,15 +20,15 @@ type Bindings = {
 const app = new Hono<Bindings>();
 
 const CORE_FILES = [
-  "SOUL",
-  "AGENTS",
+  "PRISM",
+  "OPS",
   "STYLE",
   "KNOW",
   "HEURISTICS",
   "INDEX",
   "MEMORY",
   "WORKING_MEMORY",
-  "USER",
+  "HUMAN",
   "CHANGELOG",
 ] as const;
 
