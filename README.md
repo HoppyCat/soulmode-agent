@@ -40,7 +40,7 @@ The database stores:
 
 ## The Memory Shape
 
-Soulmode is still basically a two-layer system:
+Teacat-agent is still basically a two-layer system:
 
 1. On-load core on-load files are always present.
 2. On-demand patches are fetched only when needed.
