@@ -1,4 +1,4 @@
-# Soulmode Agent
+# Teacat Agent
 
 A small "on air" agent starter for Cloudflare Workers, Hono, D1, and Claude Sonnet.
 
