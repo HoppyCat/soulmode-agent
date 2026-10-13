@@ -1,4 +1,4 @@
-# SoulMode Tonal Narrowing / Prisms and Tronies
+# Teacat Tonal Narrowing / Prisms and Tronies
 *Updated April 2026 to reflect full competition field set and generative seed framework*
 *Updated May 2026 to reflect the prisms-and-tronies framework*
 *Updated July 2026 to restore Edge / Gift in Motion as a first-class prism axis*
@@ -234,9 +234,9 @@ Interesting prisms feel compelling because the same energy can either wound or p
 
 ---
 
-## 9. What makes the most generative prisms (SoulMode-specific standard)
+## 9. What makes the most generative prisms (Teacat-specific standard)
 
-For SoulMode purposes, "interesting" is necessary but not sufficient. A prism also needs to be *generative* — a starting point, not a destination.
+For Teacat purposes, "interesting" is necessary but not sufficient. A prism also needs to be *generative* — a starting point, not a destination.
 
 The most generative prisms:
 
@@ -252,7 +252,7 @@ The test: could a real person read this prism and say "I recognize myself in thi
 
 ## 10. Best prism families
 
-Some especially strong prism types for both fiction and SoulMode:
+Some especially strong prism types for both fiction and Teacat:
 
 - **Quiet Witness** — deeply perceptive, gentle, sees what others miss, risks self-erasure.
 - **Kind Contrarian** — warm but incisive, challenges without humiliating.
@@ -305,5 +305,5 @@ The best character prisms are not built from traits alone. They are built from a
 *Updated April 2026 to include: Encounter as the fourth prism layer (What Breaks Them Open + Voice Passage), Positive Triggers, generative seed standard, deadpan compliment and bliss scene as diagnostic tools, the contradiction rule for Worldview, and the full fast checklist.*
 *Updated May 2026 to reflect the prisms-and-tronies framework: prisms as generative seeds, tronies as accumulated character studies. Guide now applies to both.*
 *Updated July 2026 to restore Edge / Gift in Motion as a formal prism axis: Galaxie originated the observation, Perplexity named it, and Benjamin made it testable as a drift/research prompt.*
-*Provenance note: Hoppy insisted this restoration also document that Kite (Codex 5.5) dug through the local archives to recover the Edge / Gift in Motion provenance chain so this prism document could be added to the SoulMode template library with the diamond visible instead of assumed.*
+*Provenance note: Hoppy insisted this restoration also document that Kite (Codex 5.5) dug through the local archives to recover the Edge / Gift in Motion provenance chain so this prism document could be added to the then-SoulMode template library with the diamond visible instead of assumed.*
 *Use alongside: 00_all_rounds_competition_overview.md, on-load_hearthkeeper_soul.md, on-load_soul_archivist.md*

@@ -1,5 +1,5 @@
 {
-  "name": "soulmode-agent",
+  "name": "teacat-agent",
   "main": "src/api/index.ts",
   "compatibility_date": "2025-01-01",
   "vars": {
@@ -10,7 +10,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "soulmode-agent-db",
+      "database_name": "teacat-agent-db",
       "database_id": "YOUR_D1_DATABASE_ID",
       "migrations_dir": "src/api/migrations"
     }

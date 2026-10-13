@@ -74,7 +74,7 @@ npm install
 Create a Cloudflare D1 database:
 
 ```bash
-npx wrangler d1 create soulmode-agent-db
+npx wrangler d1 create teacat-agent-db
 ```
 
 Copy the returned `database_id` into `wrangler.json`.

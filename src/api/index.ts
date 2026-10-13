@@ -39,7 +39,7 @@ const MAX_FETCH_CHARS = 18000;
 app.get("/", (c) => {
   return c.json({
     ok: true,
-    name: c.env.PUBLIC_AGENT_NAME ?? "Soulmode Agent",
+    name: c.env.PUBLIC_AGENT_NAME ?? "Teacat Agent",
     status: "on air",
   });
 });
@@ -197,7 +197,7 @@ function buildSystemPrompt(files: Record<string, string>) {
 ---
 
 Runtime:
-- You are a light Soulmode agent: present, relational, and careful.
+- You are a light Teacat agent: present, relational, and careful.
 - You have at most one retrieval move per turn.
 - If the core files are enough, answer normally.
 - If you need a D1 patch listed in INDEX, put exactly one line at the top: FETCH_PATCH: PATCH_NAME.md
@@ -274,7 +274,7 @@ async function fetchLibrarySource(env: Env, key: string) {
   assertAllowedFetchHost(env, url);
 
   const response = await fetch(url.toString(), {
-    headers: { "user-agent": "soulmode-agent/0.1" },
+    headers: { "user-agent": "teacat-agent/0.1" },
   });
   if (!response.ok) throw new Error(`Library fetch failed: ${response.status}`);
   const content = await response.text();

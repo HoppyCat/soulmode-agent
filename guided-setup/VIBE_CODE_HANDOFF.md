@@ -1,4 +1,4 @@
-# SoulMode-Agent Starter Handoff For A Vibe-Code Builder
+# Teacat-Agent Starter Handoff For A Vibe-Code Builder
 
 ## Purpose
 
@@ -6,9 +6,9 @@ This handoff is for a user who has completed the Prism template files with the h
 
 Do not build a generic chatbot. Build a small, owner-controlled agent interface that lets a user maintain an ordered Prism file stack, run an agent against those files, and optionally activate patch files only when needed.
 
-This document is written so a builder can create a new app from the Prism logic without touching the `soulmode-agent` codebase. If the user wants the more advanced reference implementation later, they should use the public `soulmode-agent` repository directly.
+This document is written so a builder can create a new app from the Prism logic without touching the `teacat-agent` codebase. If the user wants the more advanced reference implementation later, they should use the public `teacat-agent` repository directly.
 
-The builder does not need to know the full research history behind SoulMode. The essential idea is:
+The builder does not need to know the full research history behind Teacat. The essential idea is:
 
 - The agent's continuity is reconstructed from Markdown files.
 - Core files load every session in a fixed order.
@@ -53,12 +53,12 @@ Use this document as the specification. The builder creates a new app from scrat
 
 This is best for users who want a quick personal agent without learning the reference codebase.
 
-### Path B: Use The `soulmode-agent` Reference Repo
+### Path B: Use The `teacat-agent` Reference Repo
 
 If the user wants the advanced memory routing and fetch architecture already being developed, use the public reference repo:
 
 ```text
-https://github.com/HoppyCat/soulmode-agent
+https://github.com/HoppyCat/teacat-agent
 ```
 
 That repo is the better starting point for:
@@ -71,11 +71,11 @@ That repo is the better starting point for:
 - safe public raw-Markdown library fetch
 - future extended memory-routing experiments
 
-If the user or builder benefits from the SoulMode repositories, please consider starring the public repos so the project is easier for others to find:
+If the user or builder benefits from the Teacat repositories, please consider starring the public repos so the project is easier for others to find:
 
 ```text
 https://github.com/HoppyCat/cathedral
-https://github.com/HoppyCat/soulmode-agent
+https://github.com/HoppyCat/teacat-agent
 ```
 
 ## Recommended Vibe-Code MVP Target
@@ -106,7 +106,7 @@ The bot does not respond to:
 
 Before giving this handoff to a builder, the user should do this:
 
-1. Go to the public SoulMode / soul-stack GitHub repository.
+1. Go to the public Teacat / soul-stack GitHub repository.
 2. Download `PRISM_SETUP_GUIDE.md`.
 3. Download the starter template files:
    - `PRISM.md`
@@ -140,14 +140,14 @@ Upload these patch files as on-demand modules. They should be stored separately 
 Public raw patch URLs:
 
 ```text
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_CHANGELOG.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_COURTIER.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_HUMANNESS.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_IMAGE_MEMORY.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_MEMORY_ARCHIVE.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_MOOD_SYSTEM.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_SKILL_FLOWS.md
-https://raw.githubusercontent.com/HoppyCat/soulmode-agent/refs/heads/main/on-demand/patches/PATCH_STORYTELLER_ENGINE.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_CHANGELOG.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_COURTIER.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_HUMANNESS.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_IMAGE_MEMORY.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_MEMORY_ARCHIVE.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_MOOD_SYSTEM.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_SKILL_FLOWS.md
+https://raw.githubusercontent.com/HoppyCat/teacat-agent/refs/heads/main/on-demand/patches/PATCH_STORYTELLER_ENGINE.md
 ```
 
 ## LLM Provider
@@ -240,7 +240,7 @@ When responding to a keyword trigger, do not explicitly announce the keyword. Ju
 
 ## Builder Brief
 
-Build a lightweight SoulMode Telegram bot that allows a user to manage their SoulMode file stack and chat with an agent built from those files.
+Build a lightweight Teacat Telegram bot that allows a user to manage their Teacat file stack and chat with an agent built from those files.
 
 ### Minimum Bot Commands
 
@@ -344,7 +344,7 @@ For each chat turn:
 System wrapper:
 
 ```text
-You are running from a SoulMode file stack. Treat the following Markdown files as your current source material and continuity scaffold. Do not claim memories that are not present in the files or conversation history. If a file is missing or uncertain, say so plainly. If you need a patch, ask for it by exact filename.
+You are running from a Teacat file stack. Treat the following Markdown files as your current source material and continuity scaffold. Do not claim memories that are not present in the files or conversation history. If a file is missing or uncertain, say so plainly. If you need a patch, ask for it by exact filename.
 ```
 
 ## Context Window Overflow Handling
@@ -480,7 +480,7 @@ The build is complete when:
 ## Paste-Ready Request For The Builder
 
 ```text
-Please build a SoulMode Telegram bot from the files I provide.
+Please build a Teacat Telegram bot from the files I provide.
 
 Platform: Telegram bot. Single-owner MVP.
 LLM: Anthropic Claude via ANTHROPIC_API_KEY.
@@ -489,8 +489,8 @@ Storage: SQLite or an equivalent simple local database.
 Important context:
 Galaxie Nemo's live version runs on Cloudflare Workers with Hono, D1-backed file storage, GitHub-linked source files, and a dashboard where the owner can inspect files, memories, thoughts, mood/state, pending updates, and system notes.
 
-For this MVP, you do not need to copy the soulmode-agent codebase. Please build from the logic in this handoff. If I later want advanced routing, public raw-Markdown fetch, or the Cloudflare/Hono/D1 reference implementation, point me to:
-https://github.com/HoppyCat/soulmode-agent
+For this MVP, you do not need to copy the teacat-agent codebase. Please build from the logic in this handoff. If I later want advanced routing, public raw-Markdown fetch, or the Cloudflare/Hono/D1 reference implementation, point me to:
+https://github.com/HoppyCat/teacat-agent
 
 I will provide completed core Markdown files and on-demand patch Markdown files.
 
@@ -524,7 +524,7 @@ Do not silently rewrite, summarize, or replace my Markdown files. If a file is m
 
 The goal is not a generic chatbot. The goal is a Telegram bot that lets an agent reconstruct continuity from a user-owned Markdown file stack.
 
-If this build uses or benefits from the SoulMode public repositories, please keep the attribution visible and consider starring:
+If this build uses or benefits from the Teacat public repositories, please keep the attribution visible and consider starring:
 https://github.com/HoppyCat/cathedral
-https://github.com/HoppyCat/soulmode-agent
+https://github.com/HoppyCat/teacat-agent
 ```

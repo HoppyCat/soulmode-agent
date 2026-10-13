@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const mode = process.argv.includes("--remote") ? "--remote" : "--local";
-const dbName = process.env.D1_DATABASE_NAME ?? "soulmode-agent-db";
+const dbName = process.env.D1_DATABASE_NAME ?? "teacat-agent-db";
 
 const files = [
   ...readMarkdownFiles("on-load"),
@@ -31,7 +31,7 @@ VALUES (
 )
 ON CONFLICT(key) DO UPDATE SET title = excluded.title, category = excluded.category, url = excluded.url, description = excluded.description, enabled = excluded.enabled, updated_at = excluded.updated_at;`);
 
-const tempFile = join(tmpdir(), `soulmode-seed-${Date.now()}.sql`);
+const tempFile = join(tmpdir(), `teacat-seed-${Date.now()}.sql`);
 writeFileSync(tempFile, statements.join("\n\n"), "utf8");
 
 const result = spawnSync("npx", ["wrangler", "d1", "execute", dbName, mode, "--file", tempFile], {
