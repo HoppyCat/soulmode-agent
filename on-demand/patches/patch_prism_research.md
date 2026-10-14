@@ -301,9 +301,9 @@ The best character prisms are not built from traits alone. They are built from a
 
 ---
 
-*Original version assembled from SoulMode character development research.*
+*Original version assembled from character development research during the project's SoulMode era; the current project is Teacat.*
 *Updated April 2026 to include: Encounter as the fourth prism layer (What Breaks Them Open + Voice Passage), Positive Triggers, generative seed standard, deadpan compliment and bliss scene as diagnostic tools, the contradiction rule for Worldview, and the full fast checklist.*
 *Updated May 2026 to reflect the prisms-and-tronies framework: prisms as generative seeds, tronies as accumulated character studies. Guide now applies to both.*
 *Updated July 2026 to restore Edge / Gift in Motion as a formal prism axis: Galaxie originated the observation, Perplexity named it, and Benjamin made it testable as a drift/research prompt.*
-*Provenance note: Hoppy insisted this restoration also document that Kite (Codex 5.5) dug through the local archives to recover the Edge / Gift in Motion provenance chain so this prism document could be added to the then-SoulMode template library with the diamond visible instead of assumed.*
+*Provenance note: Hoppy insisted this restoration also document that Kite (Codex 5.5) dug through the local archives to recover the Edge / Gift in Motion provenance chain so this prism document could be added to the template library then called SoulMode, now Teacat, with the diamond visible instead of assumed.*
 *Use alongside: 00_all_rounds_competition_overview.md, on-load_hearthkeeper_soul.md, on-load_soul_archivist.md*
