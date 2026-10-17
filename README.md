@@ -68,8 +68,10 @@ The important part: `HEURISTICS.md` guides where to look, `INDEX.md` lists what 
 Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
+
+Use Node.js 24 for development and checks.
 
 Create a Cloudflare D1 database:
 
@@ -145,7 +147,26 @@ curl "https://api.telegram.org/botYOUR_TELEGRAM_BOT_TOKEN/setWebhook" \
   -d "secret_token=YOUR_TELEGRAM_WEBHOOK_SECRET"
 ```
 
-The Worker checks Telegram's `x-telegram-bot-api-secret-token` header when `TELEGRAM_WEBHOOK_SECRET` is configured.
+Set `TELEGRAM_WEBHOOK_SECRET` before accepting Telegram messages. Each request
+must carry the matching `x-telegram-bot-api-secret-token` header. An empty or
+missing secret returns HTTP 401.
+
+Telegram history is scoped to the chat and sender. Direct API history has its
+own scope, keyed by the caller's `userId`. Give `CHAT_API_TOKEN` only to trusted
+clients that manage those user IDs. The seeded core files are shared context,
+so keep their contents suitable for every person who can reach the bot.
+
+### Upgrading an existing agent
+
+This version starts fresh histories under scoped keys. Older rows remain in
+D1 for the owner's retention or export process. Keep those rows separate when
+moving data between versions: the old keys combined several chat contexts.
+
+Run the seed command again after updating your local core files. It adds
+`discoball_readme`, refreshes `INDEX`, and disables the old Cathedral/Soul Stack
+template entries when they still use the original URLs. Seed commands replace
+core file contents with your local copies, so preserve your own edits before
+running them.
 
 ---
 
@@ -164,10 +185,12 @@ Add a source:
 curl -X POST "https://YOUR_WORKER_URL/api/library" \
   -H "authorization: Bearer YOUR_ADMIN_TOKEN" \
   -H "content-type: application/json" \
-  -d "{\"key\":\"routekeeper_case_study\",\"title\":\"RouteKeeper Case Study\",\"category\":\"prisms\",\"url\":\"https://raw.githubusercontent.com/HoppyCat/cathedral/refs/heads/main/prisms/RouteKeeper/RouteKeeper_CaseStudy.md\",\"description\":\"Public case study for RouteKeeper.\"}"
+  -d "{\"key\":\"discoball_readme\",\"title\":\"Discoball README\",\"category\":\"discoball\",\"url\":\"https://raw.githubusercontent.com/HoppyCat/discoball/main/README.md\",\"description\":\"Public archive exhibit and project overview.\"}"
 ```
 
 Then add the same key to `on-load/INDEX.md` so the agent knows it exists.
+
+The seed script and shipped index already include `discoball_readme`.
 
 Keep private memories and participant-sensitive data in D1 or private storage, not public raw links.
 
@@ -176,6 +199,22 @@ Keep private memories and participant-sensitive data in D1 or private storage, n
 ## Model
 
 The default model is `claude-sonnet-4-6`, Anthropic's current recommended Sonnet for agentic and coding tasks. You can change it with `AGENT_MODEL` in `wrangler.json` or `.dev.vars`.
+
+---
+
+## Checks
+
+```bash
+npm run typecheck
+npm test
+```
+
+The `Agent checks` workflow runs these commands on pushes and pull requests.
+It uses a fresh workflow file, `.github/workflows/checks.yml`, in place of the
+retired `deploy.yml` workflow. Repository owners can enable Actions under
+Settings → Actions → General and approve a first contribution from a fork
+when GitHub requests it. Use Actions → Agent checks → Run workflow for a
+manual check after merging.
 
 ---
 

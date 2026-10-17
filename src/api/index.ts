@@ -53,7 +53,8 @@ app.post("/api/chat", async (c) => {
 
   const userId = body.userId ?? "local";
   const username = body.username ?? "local";
-  const result = await answerWithPossibleFetch(c.env, { userId, username, message, source: "api" });
+  const conversationKey = JSON.stringify(["api", userId]);
+  const result = await answerWithPossibleFetch(c.env, { userId, username, message, conversationKey });
   return c.json(result);
 });
 
@@ -67,7 +68,8 @@ app.post("/api/telegram", async (c) => {
 
   const userId = String(incoming.from?.id ?? chatId);
   const username = incoming.from?.username ?? incoming.from?.first_name ?? "telegram";
-  const result = await answerWithPossibleFetch(c.env, { userId, username, message: text, source: "telegram" });
+  const conversationKey = JSON.stringify(["telegram", chatId, userId]);
+  const result = await answerWithPossibleFetch(c.env, { userId, username, message: text, conversationKey });
 
   await sendTelegramMessage(c.env, chatId, result.response);
   return c.json({ ok: true });
@@ -142,11 +144,11 @@ export default app;
 
 async function answerWithPossibleFetch(
   env: Env,
-  input: { userId: string; username: string; message: string; source: "api" | "telegram" },
+  input: { userId: string; username: string; message: string; conversationKey: string },
 ) {
   const [files, history] = await Promise.all([
     loadCoreFiles(env.DB),
-    loadConversation(env.DB, input.userId),
+    loadConversation(env.DB, input.conversationKey),
   ]);
 
   const messages = [
@@ -178,7 +180,7 @@ async function answerWithPossibleFetch(
   }
 
   response = stripFetchDirectives(response);
-  await persistTurn(env.DB, input.userId, input.username, input.message, response);
+  await persistTurn(env.DB, input.conversationKey, input.userId, input.username, input.message, response);
 
   return {
     response,
@@ -308,9 +310,9 @@ function assertAllowedFetchHost(env: Env, url: URL) {
   }
 }
 
-async function loadConversation(db: D1Database, userId: string): Promise<ConversationMessage[]> {
+async function loadConversation(db: D1Database, conversationKey: string): Promise<ConversationMessage[]> {
   const row = await db.prepare("SELECT messages FROM conversations WHERE user_id = ?")
-    .bind(userId)
+    .bind(conversationKey)
     .first<{ messages: string }>();
   if (!row?.messages) return [];
 
@@ -322,9 +324,9 @@ async function loadConversation(db: D1Database, userId: string): Promise<Convers
   }
 }
 
-async function persistTurn(db: D1Database, userId: string, username: string, message: string, response: string) {
+async function persistTurn(db: D1Database, conversationKey: string, userId: string, username: string, message: string, response: string) {
   const now = Date.now();
-  const history = await loadConversation(db, userId);
+  const history = await loadConversation(db, conversationKey);
   const nextHistory: ConversationMessage[] = [
     ...history,
     { role: "user" as const, content: message, createdAt: now },
@@ -340,7 +342,7 @@ async function persistTurn(db: D1Database, userId: string, username: string, mes
          messages = excluded.messages,
          message_count = conversations.message_count + 2,
          last_active = excluded.last_active`,
-    ).bind(userId, username, JSON.stringify(nextHistory), nextHistory.length, now, now),
+    ).bind(conversationKey, username, JSON.stringify(nextHistory), nextHistory.length, now, now),
     db.prepare(
       `INSERT INTO bot_events (user_id, username, message_preview, response_preview, created_at)
        VALUES (?, ?, ?, ?, ?)`,
@@ -367,7 +369,7 @@ function stripFetchDirectives(text: string) {
 
 function isValidTelegramSecret(c: Context<Bindings>) {
   const expected = c.env.TELEGRAM_WEBHOOK_SECRET;
-  if (!expected) return true;
+  if (!expected) return false;
   return c.req.header("x-telegram-bot-api-secret-token") === expected;
 }
 
